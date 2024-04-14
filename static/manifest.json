@@ -1,9 +1,7 @@
 {
     "name": "NoSmoke",
     "short_name": "nosmoke",
-    "theme_color": "#000000",
-    "background_color": "#000000",
-    "display": "standalone",
+    "display": "fullscreen",
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/"
