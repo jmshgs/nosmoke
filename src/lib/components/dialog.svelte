@@ -71,7 +71,17 @@
         <Dialog.Footer>
             <Button type="button" on:click={
                 async () => {
+                    if (false) { //can't 
+                        return;
+                    }
                    console.log("Submit")
+
+
+
+
+
+                   open = false;
+                   
                 }
             }>Submit</Button>
         </Dialog.Footer>
