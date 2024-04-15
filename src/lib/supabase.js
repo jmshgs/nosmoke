@@ -50,19 +50,16 @@ export const insertData = async (journal, restingHR, happiness, relapse) => {
 
 export const fetchData = async () => {
     try {
-        let data = await fetchUser()
-        .then(async user => {
-            const { data, error } = await supabase
-                .from('user_info')
-                .select()
-                .eq('user_id', user.id)
-            if (error) {
-                throw new Error(error.message)
-            }
+        let user = await fetchUser()
+        const { data, error } = await supabase
+            .from('user_info')
+            .select()
+            .eq('user_id', user.id)
+        if (error) {
+            throw new Error(error.message)
         }
-        )
         return data;
-
+        
     } catch (error) {
         console.error('Error inserting data:', error.message)
     }
