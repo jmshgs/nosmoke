@@ -15,13 +15,11 @@
 			Stop smoking for good. <br>Get help and gain motivation while quitting smoking.
 		</p>
 
-		<div
-			class="flex flex-col space-y-5 sm:flex-row sm:justify-center sm:space-y-0">
+		<div class="flex flex-col space-y-5 sm:flex-row sm:justify-center sm:space-y-0">
 			<Button href="signup" class="h-12 space-x-3" variant="outline">
 				<p>Get started</p>
                 <Icon icon="akar-icons:arrow-right" class="w-4 h-4"/>
 			</Button>
-			<Button href="#" class="h-12" variant="outline">About Us</Button>
 		</div>
 	</div>
 </section>

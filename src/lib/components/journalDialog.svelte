@@ -51,7 +51,7 @@
             <div class="flex flex-col items-center">
        
             <Label for="description" class="text-center align-center pb-5">My resting heartrate is...</Label>
-            <Input type="number" class="justify-end"></Input>
+            <Input type="number" pattern="/d*" class="justify-end"></Input>
             <Label for="description" class="text-right align-center pt-2 text-gray-500">BPM</Label>
         
             
