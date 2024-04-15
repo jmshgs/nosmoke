@@ -41,11 +41,6 @@
     ];
 
     let selectedItem = getFirstPath();
-
-
-
-
-
 </script>
 
 

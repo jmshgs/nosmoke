@@ -23,7 +23,7 @@ export const signInWithGoogle = async () => {
     }
 }
 
-const fetchUser = async () => {
+export const fetchUser = async () => {
     const { data: { user } } = await supabase.auth.getUser()
     console.log(user)
     return user
@@ -31,7 +31,7 @@ const fetchUser = async () => {
 
 export const insertData = async (journal, restingHR, happiness, relapse) => {
     try {
-        user = await fetchUser()
+        let user = await fetchUser()
         .then(async user => {
             const { data, error } = await supabase
                 .from('user_info')
@@ -50,7 +50,7 @@ export const insertData = async (journal, restingHR, happiness, relapse) => {
 
 export const fetchData = async () => {
     try {
-        user = await fetchUser()
+        let user = await fetchUser()
         .then(async user => {
             const { data, error } = await supabase
                 .from('user_info')

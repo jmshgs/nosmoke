@@ -1,7 +1,7 @@
 <script>
     // Add any necessary script logic here
     import { Button } from '$lib/components/ui/button';
-    import { signInWithGoogle, fetchUser } from '$lib/supabase.js';
+    import { signInWithGoogle } from '$lib/supabase.js';
 </script>
 
 <div class="flex flex-col space-y-5 h-[85vh] w-full items-center justify-center">
@@ -11,10 +11,6 @@
     </div>
     <Button class="space-x-1" variant="outline" on:click={async () => {
         await signInWithGoogle()
-        .then(async () => {
-            const user = await fetchUser();
-            console.log(user);
-        })
     }}>
         <p>Sign in with Google<p/>
         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 48 48" {...$$props}>

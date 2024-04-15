@@ -3,8 +3,15 @@
 
     import { ModeWatcher } from 'mode-watcher';
     import Tabbar from "$lib/components/tabbar.svelte";
+    import { fetchUser } from "$lib/supabase.js"
+    import { onMount } from "svelte";
 
 
+    let user = null;
+    
+    onMount(async () => {
+        user = await fetchUser();
+    });
 </script>
 
 
@@ -14,7 +21,9 @@
     <div class="flex-grow flex overflow-scroll">
         <slot />        
     </div>
+    {#if user}
     <div class="h-full">
         <Tabbar />
     </div>
+    {/if}
 </div>

@@ -15,7 +15,7 @@
 
     import { insertData } from "$lib/supabase.js";
 
-    let title = "";
+
     let description = "";
     let restingHeartRate = 70;
     let happiness = 5;
@@ -51,7 +51,7 @@
             <div class="flex flex-col items-center">
        
             <Label for="description" class="text-center align-center pb-5">My resting heartrate is...</Label>
-            <Input type="number" pattern="/d*" class="justify-end"></Input>
+            <Input type="number" pattern="/d*" bind:value={restingHeartRate} inputmode="decimal" class="justify-end"></Input>
             <Label for="description" class="text-right align-center pt-2 text-gray-500">BPM</Label>
         
             
@@ -66,16 +66,13 @@
                 <Slider value={[5]} max={10} step={1} class="py-2"/>
                 <div class="w-full flex flex-row py-1">
                 <Label for="description" class="text-left">1</Label>
-                <Label for="description" class="text-center flex-grow">happiness</Label>
+                <Label for="description" bhappiness class="text-center flex-grow">How happy do I feel right now?</Label>
                 <Label for="description" class="text-right">10</Label>
 
                 </div>
 
-
-
-
                 <div class="flex items-center space-x-2">
-                <Checkbox id="relapse" bind:relapse variant="outline" class="my-5"/>
+                <Checkbox id="relapse" bind:checked={relapse} variant="outline" class="my-5"/>
                     <Label
                       for="terms"
                       class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -90,17 +87,10 @@
         <Dialog.Footer>
             <Button type="button" on:click={
                 async () => {
-                    if (false) { //can't close 
-                        return;
-                    }
-                   console.log("Submit")
-
-
-
-
-
-                   open = false;
-                   
+                    console.log("relapse: "+ relapse);
+                    insertData(description, restingHeartRate, happiness, relapse)
+                    console.log("Submit")
+                    open = false;
                 }
             }>Submit</Button>
         </Dialog.Footer>
