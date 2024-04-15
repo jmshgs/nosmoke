@@ -1,4 +1,3 @@
-# A Svelte Skeleton Project
+# NoSmoke
 
-
-`shadcn/ui` and `tailwindcss`
+A mobile app submission for OhloneHacks 2024
